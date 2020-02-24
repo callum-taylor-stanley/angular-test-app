@@ -1,0 +1,66 @@
+<div class="row mb-3">
+  <div class="col-md-3 main-column">
+    <div class="row column-sub-row">
+      <div class="col">
+        <img src="assets/todo.svg" class="status-indicator-icon">
+      </div>
+      <div class="col-6">
+        <h1 class="row-title">To Do</h1>
+      </div>
+      <div class="col">
+        <fa-icon [icon]="faPlusCircle" class="add-task-icon" (click)="addTask()"></fa-icon>
+      </div>
+    </div>
+    <div *ngFor="let task of tasks" class="row">
+      <div *ngIf="isToDo(task.id)" class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">{{task.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 main-column">
+    <div class="row column-sub-row">
+      <div class="col">
+        <img src="assets/inprogress.svg" class="status-indicator-icon">
+      </div>
+      <div class="col-6">
+        <h1 class="row-title">In Progress</h1>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 main-column">
+    <div class="row column-sub-row">
+      <div class="col">
+        <img src="assets/done.svg" class="status-indicator-icon">
+      </div>
+      <div class="col-6">
+        <h1 class="row-title">Done</h1>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
